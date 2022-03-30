@@ -1,3 +1,5 @@
+![example workflow](https://github.com/LeNeRoTeX/element-proxy/actions/workflows/maven.yml/badge.svg)
+
 # Getting Started
 
 ElementProxy is a library to intercept and fetch methods.
