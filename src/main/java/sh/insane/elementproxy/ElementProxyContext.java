@@ -4,7 +4,6 @@ import sh.insane.elementproxy.method.GetterFunction;
 import sh.insane.elementproxy.method.MethodDescriptor;
 import sh.insane.elementproxy.proxy.MethodProxy;
 
-import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -29,14 +28,13 @@ public class ElementProxyContext {
         } else {
             synchronized (this)
             {
-                if(isClassProxied(clazz)) {
-                    methodDescriptor = invokeExisting(clazz, getterFunction);
-                } else {
+                if (!isClassProxied(clazz)) {
                     MethodProxy<T> methodProxy = proxyFactory.createProxy(clazz);
                     proxiedClasses.put(clazz, methodProxy);
 
-                    methodDescriptor = invokeExisting(clazz, getterFunction);
                 }
+
+                methodDescriptor = invokeExisting(clazz, getterFunction);
             }
         }
 

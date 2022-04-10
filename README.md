@@ -17,6 +17,11 @@ MethodDescriptor descriptor = ctx.getDescriptor(Account.class, Account::getName)
 
 descriptor.getName(); // -> "getName"
 descriptor.getReturnType(); // -> String.class
+
+
+// OR
+
+Method method = ctx.getMethod(Account.class, Account::getName);
 ```
 
 ### Interfaces
@@ -27,4 +32,8 @@ MethodDescriptor descriptor = ctx.getDescriptor(List.class, List::size);
 
 descriptor.getName(); // -> "size"
 descriptor.getReturnType(); // -> int.class
+
+// OR
+
+Method method = ctx.getMethod(List.class, List::size);
 ```
