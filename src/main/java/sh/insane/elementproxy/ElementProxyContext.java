@@ -4,6 +4,7 @@ import sh.insane.elementproxy.method.GetterFunction;
 import sh.insane.elementproxy.method.MethodDescriptor;
 import sh.insane.elementproxy.proxy.MethodProxy;
 
+import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -20,7 +21,7 @@ public class ElementProxyContext {
         return proxiedClasses.containsKey(clazz);
     }
 
-    public <T, R> MethodDescriptor getMethod(Class<T> clazz, GetterFunction<T, R> getterFunction) {
+    public <T, R> MethodDescriptor getDescriptor(Class<T> clazz, GetterFunction<T, R> getterFunction) {
         MethodDescriptor methodDescriptor;
 
         if(isClassProxied(clazz)) {

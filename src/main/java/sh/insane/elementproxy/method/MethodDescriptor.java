@@ -6,11 +6,13 @@ public class MethodDescriptor {
     private final Class<?> clazz;
     private final Class<?> returnType;
     private final String name;
+    private final Method method;
 
     public MethodDescriptor(Method method) {
         clazz = method.getDeclaringClass();
         returnType = method.getReturnType();
         name = method.getName();
+        this.method = method;
     }
 
     public Class<?> getClazz() {
@@ -23,5 +25,9 @@ public class MethodDescriptor {
 
     public String getName() {
         return name;
+    }
+
+    public Method getMethod() {
+        return method;
     }
 }

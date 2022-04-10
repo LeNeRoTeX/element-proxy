@@ -13,7 +13,7 @@ Always try to use single `ElementProxyContext` and not multiple instances.
 ```
 ElementProxyContext ctx = new ElementProxyContext();
 
-MethodDescriptor descriptor = ctx.getMethod(Account.class, Account::getName);
+MethodDescriptor descriptor = ctx.getDescriptor(Account.class, Account::getName);
 
 descriptor.getName(); // -> "getName"
 descriptor.getReturnType(); // -> String.class
@@ -23,7 +23,7 @@ descriptor.getReturnType(); // -> String.class
 ```
 ElementProxyContext ctx = new ElementProxyContext();
 
-MethodDescriptor descriptor = ctx.getMethod(List.class, List::size);
+MethodDescriptor descriptor = ctx.getDescriptor(List.class, List::size);
 
 descriptor.getName(); // -> "size"
 descriptor.getReturnType(); // -> int.class

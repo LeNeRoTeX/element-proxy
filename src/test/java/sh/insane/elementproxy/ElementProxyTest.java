@@ -13,7 +13,7 @@ class ElementProxyTest {
 	public void objectTypeTest() {
 		ElementProxyContext elementProxyContext = new ElementProxyContext();
 
-		MethodDescriptor methodDescriptor = elementProxyContext.getMethod(ObjectType.class, ObjectType::getBoolean);
+		MethodDescriptor methodDescriptor = elementProxyContext.getDescriptor(ObjectType.class, ObjectType::getBoolean);
 
 		assertThat("invalid fetched name", methodDescriptor.getName().equals("getBoolean"));
 		assertThat("invalid fetched return type", methodDescriptor.getReturnType().equals(Boolean.class));
@@ -23,7 +23,7 @@ class ElementProxyTest {
 	public void primitiveTypeTest() {
 		ElementProxyContext elementProxyContext = new ElementProxyContext();
 
-		MethodDescriptor methodDescriptor = elementProxyContext.getMethod(PrimitiveType.class, PrimitiveType::getBoolean);
+		MethodDescriptor methodDescriptor = elementProxyContext.getDescriptor(PrimitiveType.class, PrimitiveType::getBoolean);
 
 		assertThat("invalid fetched name", methodDescriptor.getName().equals("getBoolean"));
 		assertThat("invalid fetched return type", methodDescriptor.getReturnType().equals(boolean.class));
